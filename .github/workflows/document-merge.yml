@@ -17,7 +17,7 @@ jobs:
           TITLE=$(git log --oneline | head -n 1 | cut -d' ' -f2-)
           BODY="{
            \"title\": \"OOD PR $TITLE\",
-           \"body": \"Create documentation for https://github.com/OSC/ondemand/commit/$GITHUB_SHA\"
+           \"body\": \"Create documentation for https://github.com/OSC/ondemand/commit/$GITHUB_SHA\"
           }"
 
           echo $TITLE
