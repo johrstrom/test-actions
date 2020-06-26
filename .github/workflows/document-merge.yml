@@ -24,7 +24,7 @@ jobs:
           echo $BODY
 
           curl --request POST \
-          --url https://api.github.com/repos/johrstrom/test-actions/issues \
+          --url https://api.github.com/repos/johrstrom/other-test-actions/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data "$BODY"
