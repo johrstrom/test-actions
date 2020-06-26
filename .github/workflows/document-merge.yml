@@ -23,7 +23,7 @@ jobs:
           echo $TITLE
           echo $BODY
 
-          curl --request POST \
+          curl -v --user johrstrom --request POST \
           --url https://api.github.com/repos/johrstrom/other-test-actions/issues \
           --header 'Authorization: token ${{ secrets.MY_TOKEN }}' \
           --header 'content-type: application/json' \
