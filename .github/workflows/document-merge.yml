@@ -17,7 +17,7 @@ jobs:
           TITLE=$(git log --oneline | head -n 1 | cut -d' ' -f2-)
 
           curl --request POST \
-          --url https://api.github.com/repos/johrstrom/test-action/issues \
+          --url https://api.github.com/repos/johrstrom/test-actions/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data "{
