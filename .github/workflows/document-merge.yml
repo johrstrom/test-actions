@@ -2,30 +2,31 @@ name: Create Document issue for Merge Request
 
 # Run this action when we merge into master
 on:
-  push:
+  pull_request:
     branches:
       - master
+    types: [closed]
 
 jobs:
   # Create an issue on the documentation repository to document whatever was just pulled in.
   create-doc-issue:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
-      - uses: actions/checkout@v2
       - name: Create an issue on the documentation repository
+        if: contains(github.event.pull_request.labels.*.name, 'needs doc')
         run: |
-          TITLE=$(git log --oneline | head -n 1 | cut -d' ' -f2-)
+          PR_NUM=${{ github.event.pull_request.number }}
+          TITLE="${{ github.event.pull_request.pull_request.title }}"
+          echo "pull request: ${{ github.event.pull_request }}"
+          echo "inner PR ${{ github.event.pull_request.pull_request }}"
           BODY="{
-           \"title\": \"OOD PR $TITLE\",
-           \"body\": \"Create documentation for https://github.com/OSC/ondemand/commit/$GITHUB_SHA\"
+             \"title\": \"$TITLE\",
+             \"body\": \"Create documentation for https://github.com/OSC/ondemand/pull/$PR_NUM\"
           }"
-
-          echo $TITLE
-          echo $BODY
 
           curl -v --user johrstrom --request POST \
           --url https://api.github.com/repos/johrstrom/other-test-actions/issues \
           --header 'Authorization: token ${{ secrets.MY_TOKEN }}' \
           --header 'content-type: application/json' \
           --data "$BODY"
-
