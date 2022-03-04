@@ -1,7 +1,7 @@
 {
   "upload_type": "software", 
-  "description": "This is a test to work on the Zenodo Github action",
-  "title": "test Zenodo Release Action",
+  "description": "This is just a test to test the Github actions for uploading to zenodo - https://github.com/rseng/zenodo-release/.",
+  "title": "Test Zenodo GH action for uploading",
   "creators": [
      {
        "affiliation": "Ohio SuperComputer Center",
