@@ -1,0 +1,13 @@
+{
+  "upload_type": "software", 
+  "description": "This is a test to work on the Zenodo Github action",
+  "title": "test Zenodo Release Action",
+  "creators": [
+     {
+       "affiliation": "Ohio SuperComputer Center",
+       "name": "Jeff Ohrstrom"
+     }
+  ],
+  "keywords": [],
+  "license": "MIT"
+}
