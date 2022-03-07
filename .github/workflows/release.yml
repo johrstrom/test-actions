@@ -19,10 +19,10 @@ jobs:
         echo "archive=${name}" >> $GITHUB_ENV
 
     - name: Run Zenodo Deploy
-      uses: johrstrom/zenodo-release@main
+      uses: johrstrom/zenodo-release@upload-new-version
       with:
         token: ${{ secrets.ZENODO_TOKEN }}
         version: ${{ github.event.release.tag_name }}
         zenodo_json: .zenodo.json
         archive: ${{ env.archive }}
-        doi: '10.5281/zenodo.6330081'
+        doi: '10.5281/zenodo.6323747'
