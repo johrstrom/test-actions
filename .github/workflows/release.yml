@@ -19,7 +19,7 @@ jobs:
         echo "archive=${name}" >> $GITHUB_ENV
 
     - name: Run Zenodo Deploy
-      uses: johrstrom/zenodo-release@fix-issues
+      uses: johrstrom/zenodo-release@debug-again
       with:
         token: ${{ secrets.ZENODO_TOKEN }}
         version: ${{ github.event.release.tag_name }}
