@@ -21,7 +21,7 @@ jobs:
     - name: Run Zenodo Deploy
       uses: johrstrom/zenodo-release@main
       with:
-        token: ${{ secrets.ZENODO_TOKEN }}
+        token: abc123
         version: ${{ github.event.release.tag_name }}
         zenodo_json: .zenodo.json
         archive: ${{ env.archive }}
