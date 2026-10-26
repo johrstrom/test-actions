@@ -7,3 +7,5 @@ A repo to test GH actions
 I'm adding this to the README to trigger a Github Action!
 
 Sometimes I have to edit this file to get zenodo to recognize a new artifact.
+
+opening a pr
